@@ -1,0 +1,5 @@
+Goblin 30 12 4
+Hobgoblin 32 14 5
+Sahuagin 42 34 5
+Demônio 655 54 7
+Diabo 12 23 4

@@ -176,5 +176,5 @@ def Preencher(listbox, dados):
         listbox.insert(END, objeto)
 
 
-janela = Tk()
-Aplicacao = Aplicacao(janela)
+#janela = Tk()
+#Aplicacao = Aplicacao(janela)

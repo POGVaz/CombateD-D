@@ -14,7 +14,7 @@ class Controlador:
 
         Controlador.log.debug("Instanciado")
 
-        interface.inicializaInterface()
+        # interface.inicializaInterface()
 
     @classmethod
     def iniciaLogger(cls, nivel=logging.DEBUG, formato="%(name)-12s : %(levelname)-8s : %(message)s"):

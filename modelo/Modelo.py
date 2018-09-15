@@ -1,3 +1,4 @@
+import pymongo
 import logging
 
 
@@ -11,6 +12,21 @@ class Modelo:
 
         # Logger:
         Modelo.log.debug("Instanciado")
+
+        meuCliente = pymongo.MongoClient("mongodb://localhost:27017/")
+        combateBD = meuCliente["combateBD"]
+
+        colecaoHerois = combateBD["herois"]
+
+        meuHeroi = {"nome": "Tharin", "vida": 30}
+
+        colecaoHerois.insert_one(meuHeroi)
+
+        dblist = meuCliente.list_database_names()
+        if "combateBD" in dblist:
+            print("A base de dados foi criada!")
+
+        Modelo.log.debug("Base de dados carregada")
 
     @classmethod
     def iniciaLogger(cls, nivel=logging.DEBUG, formato="%(name)-12s : %(levelname)-8s : %(message)s"):

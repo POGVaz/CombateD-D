@@ -8,7 +8,7 @@ def main():
 
     modelo = Modelo()
     interface = Interface(modelo=modelo)
-    controlador = Controlador(interface=interface, modelo=modelo)
+    #controlador = Controlador(interface=interface, modelo=modelo)
 
     logger.debug("---Inicio do loop da aplicação---")
     interface.aplicacao.mainloop()

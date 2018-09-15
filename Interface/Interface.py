@@ -2,7 +2,8 @@ import logging
 import tkinter as Tk
 
 #from interface.telaPrincipal import *
-from interface.janelas import *
+from interface.janelaCombate import *
+from interface.janelaSelecao import *
 
 
 class Interface:
@@ -16,6 +17,11 @@ class Interface:
         # Guarda a referência para o Modelo:
         self.modelo = modelo
 
+        self.aplicacao = Tk.Tk()
+        self.aplicacao.withdraw()
+
+        self.janelaCombate = JanelaCombate(self)
+
         Interface.log.debug("Instanciado")
 
     def inicializaInterface(self):
@@ -23,9 +29,17 @@ class Interface:
            todos os frames e widgets presentes na primeira página'''
 
         # Cria a referência da janela principal da interface:
-        self.aplicacao = JanelaPrincipal()
+        self.aplicacao = JanelaCombate()
 
         Interface.log.debug("Inicializado")
+
+    def abrirJanelaSelecao(self):
+        '''Inicializa a janela de seleção'''
+
+        # Cria a referência da janela principal da interface:
+        self.janelaSelecao = JanelaSelecao(self)
+
+        # Interface.log.debug("Inicializado")
 
     @classmethod
     def iniciaLogger(cls, nivel=logging.DEBUG, formato="%(name)-12s : %(levelname)-8s : %(message)s"):
